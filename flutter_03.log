@@ -1,0 +1,77 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter run -d web-server --web-port 0
+
+## exception
+
+PathAccessException: PathAccessException: Deletion failed, path = 'C:\Users\Lohani\AppData\Local\Temp\flutter_tools.1f3b3e4c\flutter_tool.45df9259' (OS Error: The process cannot access the file because it is being used by another process.
+, errno = 32)
+
+```
+#0      _Directory._deleteSync (dart:io/directory_impl.dart:226:7)
+#1      FileSystemEntity.deleteSync (dart:io/file_system_entity.dart:425:7)
+#2      ForwardingFileSystemEntity.deleteSync (package:file/src/forwarding/forwarding_file_system_entity.dart:70:16)
+#3      ErrorHandlingDirectory.deleteSync.<anonymous closure> (package:flutter_tools/src/base/error_handling_io.dart:448:22)
+#4      _runSync (package:flutter_tools/src/base/error_handling_io.dart:549:14)
+#5      ErrorHandlingDirectory.deleteSync (package:flutter_tools/src/base/error_handling_io.dart:447:12)
+#6      ResidentRunner.preExit (package:flutter_tools/src/resident_runner.dart:1393:25)
+#7      ResidentRunner.exit (package:flutter_tools/src/resident_runner.dart:1214:11)
+<asynchronous suspension>
+#8      TerminalHandler._commonTerminalInputHandler (package:flutter_tools/src/resident_runner.dart:1704:9)
+<asynchronous suspension>
+#9      TerminalHandler.processTerminalInput (package:flutter_tools/src/resident_runner.dart:1765:7)
+<asynchronous suspension>
+```
+
+## flutter doctor
+
+```
+[✓] Flutter (Channel stable, 3.32.2, on Microsoft Windows [Version 10.0.26100.4351], locale en-US) [528ms]
+    • Flutter version 3.32.2 on channel stable at C:\flutter
+    • Upstream repository https://github.com/flutter/flutter.git
+    • Framework revision 8defaa71a7 (2 weeks ago), 2025-06-04 11:02:51 -0700
+    • Engine revision 1091508939
+    • Dart version 3.8.1
+    • DevTools version 2.45.1
+
+[✓] Windows Version (Windows 11 or higher, 24H2, 2009) [5.9s]
+
+[✗] Android toolchain - develop for Android devices [281ms]
+    ✗ Unable to locate Android SDK.
+      Install Android Studio from: https://developer.android.com/studio/index.html
+      On first launch it will assist you in installing the Android SDK components.
+      (or visit https://flutter.dev/to/windows-android-setup for detailed instructions).
+      If the Android SDK has been installed to a custom location, please use
+      `flutter config --android-sdk` to update to that location.
+
+
+[✓] Chrome - develop for the web [255ms]
+    • Chrome at C:\Program Files\Google\Chrome\Application\chrome.exe
+
+[✓] Visual Studio - develop Windows apps (Visual Studio Build Tools 2019 16.11.47) [254ms]
+    • Visual Studio at C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools
+    • Visual Studio Build Tools 2019 version 16.11.36107.64
+    • Windows 10 SDK version 10.0.19041.0
+
+[!] Android Studio (not installed) [6ms]
+    • Android Studio not found; download from https://developer.android.com/studio/index.html
+      (or visit https://flutter.dev/to/windows-android-setup for detailed instructions).
+
+[✓] VS Code (version 1.101.1) [6ms]
+    • VS Code at C:\Users\Lohani\AppData\Local\Programs\Microsoft VS Code
+    • Flutter extension version 3.112.0
+
+[✓] Connected device (4 available) [79ms]
+    • Windows (desktop) • windows    • windows-x64    • Microsoft Windows [Version 10.0.26100.4351]
+    • Web Server (web)  • web-server • web-javascript • Flutter Tools
+    • Chrome (web)      • chrome     • web-javascript • Google Chrome 137.0.7151.104
+    • Edge (web)        • edge       • web-javascript • Microsoft Edge 137.0.3296.83
+
+[✓] Network resources [1,700ms]
+    • All expected network resources are available.
+
+! Doctor found issues in 2 categories.
+```
